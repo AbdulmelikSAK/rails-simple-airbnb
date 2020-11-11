@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to "Simple Airbnb", flats_path, style: 'text-decoration: none;' %>
+  <%= link_to "Add Flat", new_flat_path, class: "btn btn-primary"  %>
+</nav>
+
+<div class="contaier w-100 pl-5 pr-5 pt-2">
+  <h1>All our Flats (<%= @flats.size %>)</h1>
+  <div class="flat-cards d-flex justify-content-around flex-wrap">
+    <% @flats.each do |flat| %>
+      <div class="flat-card w-25 m-5 shadow-sm bg-white">
+        <div class="flat-card-image" style='background-image: url("https://source.unsplash.com/random/?house"); background-size: cover; height: 200px; background-position: center;'></div>
+        <div class="flat-card-info p-3 bg-light">
+          <p class="font-weight-bold"><%= flat.name %></p>
+          <p class="font-weight-light"><%= flat.address %></p>
+          <p><%= flat.number_of_guests %>👥 <%= flat.price_per_night %>€</p>
+        </div>
+        <div class ="p-3">
+          <%= link_to "More info", flat_path(flat), class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

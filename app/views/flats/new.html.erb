@@ -1,0 +1,13 @@
+<nav class="navbar navbar-light bg-light">
+  Simple Airbnb
+</nav>
+<div class="container w-50">
+  <%= simple_form_for @flat do |f| -%>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :number_of_guests %>
+    <%= f.input :price_per_night %>
+    <%= f.input :description %>
+    <%= f.submit "Add a Flat", class: "btn btn-primary w-100" %>
+  <% end -%>
+</div>
